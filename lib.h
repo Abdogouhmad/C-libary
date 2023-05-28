@@ -12,4 +12,6 @@ char* _strcat(char *dest, const char *src);
 char *_strcpy(char *dest, const char *src);
 char *_strncat(char *dest, const char *src, size_t n);
 size_t _strlcat(char *dst, const char *src, size_t size);
+char *_strcpy(char *dest, const char *src);
+char *_strncpy(char *dest, const char *src, size_t n);
 #endif
