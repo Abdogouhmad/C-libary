@@ -8,7 +8,7 @@
  * @src: the string that will be appended to 
  * the end of the destination string.
  * Return: the result of concatenation
- * */
+ */
 char* _strcat(char* dest, const char* src)
 {
 	size_t i = 0, j = 0;
