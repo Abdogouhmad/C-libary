@@ -1,2 +1,11 @@
 # C-libary
-these are the functions I made using C
+## strlen
+## strcat
+## strncat
+## strcpy
+## strncpy 
+## strlcat
+## atoi
+## strncpy
+## isalph
+## isdigit
