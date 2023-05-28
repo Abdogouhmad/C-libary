@@ -1,9 +1,12 @@
 #include "lib.h"
 #include <stddef.h>
 /**
-*
-*
-*/ 
+ * _strncat - Appends the 'src' string to the end of the 'dst' string, ensuring null-termination.
+ * @dest: The destination string.
+ * @src: The source string to be appended.
+ * @n: The maximum size of the resulting string (including null-terminating character).
+ * @Return: the string with specific size.
+ * */
 char* _strncat(char *dest, const char *src, size_t n)
 {
   size_t len_dest = _strlen(dest), len_src = _strlen(src);
