@@ -21,24 +21,3 @@ char* _strncat(char *dest, const char *src, size_t n)
   string[i] = '\0';
   return (string);
 }
-int main()
-{
-    char* first = "This is ";
-    char* last = "a potentially long string";
-    size_t r;
-    size_t size = 16;
-    char* buffer[size];
-
-    strcpy(buffer,first);
-    r = _strncat(buffer,last,size);
-
-    puts(buffer);
-    printf("Value returned: %ld\n",r);
-    if( r > size )
-        puts("String truncated");
-    else
-        puts("String was fully copied");
-
-    return(0);
-}
-

@@ -1,5 +1,5 @@
 #include "lib.h"
-#include <stddef.h>
+
 /**
  * _strncat - Appends the 'src' string to the end of the 'dst' string, ensuring null-termination.
  * @dest: The destination string.
