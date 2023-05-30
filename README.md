@@ -14,6 +14,5 @@ The ```strcpy``` function is used to copy a null-terminated string from the sour
 The ```strncpy``` function is similar to strcpy but includes an additional parameter to specify the maximum number of characters to copy. It takes three parameters: the destination string, the source string, and the maximum number of characters to copy. The function copies the specified number of characters from the source string to the destination string. If the length of the source string is less than the specified number of characters, the remaining characters in the destination string are filled with null characters. This function is commonly used to ensure that a fixed-size buffer is not overrun during string copying.
 ## atoll
 The ``atoll()`` function in C is used to convert a string representing a number in decimal format to its corresponding long long integer value. It is part of the standard C library <stdlib.h>. The function scans the input string until it reaches the end of the number or encounters an invalid character. It then converts the valid numeric portion of the string to its equivalent long long integer representation.
-## strncpy
-## isalph
 ## isdigit
+
