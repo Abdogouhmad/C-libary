@@ -15,4 +15,5 @@ The ```strncpy``` function is similar to strcpy but includes an additional param
 ## atoll
 The ``atoll()`` function in C is used to convert a string representing a number in decimal format to its corresponding long long integer value. It is part of the standard C library <stdlib.h>. The function scans the input string until it reaches the end of the number or encounters an invalid character. It then converts the valid numeric portion of the string to its equivalent long long integer representation.
 ## isdigit
-
+The ``_isdigit`` function is a variant of the isdigit function in C. It is used to determine if a given character, specified as an unsigned char, representsa decimal digit (0-9). The function returns a non-zero value if the character is a digit, and 0 otherwise. It is often used when character classification needs to be performed on unsigned characters, such as when working with ASCII or UTF-8 encoded strings. This function provides a convenient way to validate and manipulate character data in C programs that involve unsigned characters and digit recognition. 
+## memcpy 
