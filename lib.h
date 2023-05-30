@@ -16,5 +16,7 @@ char *_strcpy(char *dest, const char *src);
 char *_strncpy(char *dest, const char *src, size_t n);
 char *_strnstr(const char *haystack, const char *needle, size_t range);
 long long atoll(const char *str);
-int _isdigit(int nm); 
+int _isdigit(int nm);
+void *_memcpy(void *dst, const void *src, size_t range);
+void *_memccpy(void *dst, const void *src, int c, size_t n);
 #endif
