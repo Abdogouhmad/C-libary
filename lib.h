@@ -15,4 +15,5 @@ size_t _strlcat(char *dst, const char *src, size_t size);
 char *_strcpy(char *dest, const char *src);
 char *_strncpy(char *dest, const char *src, size_t n);
 char *_strnstr(const char *haystack, const char *needle, size_t range);
+long long atoll(const char *str); 
 #endif
