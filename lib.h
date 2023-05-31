@@ -20,4 +20,5 @@ int _isdigit(int nm);
 void *_memcpy(void *dst, const void *src, size_t range);
 void *_memccpy(void *dst, const void *src, int c, size_t n);
 void *_memmove(void *dest, const void *src, size_t n);
+void *_memchr(const void *s, int c, size_t n);
 #endif
