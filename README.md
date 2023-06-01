@@ -18,3 +18,18 @@ The ``atoll()`` function in C is used to convert a string representing a number 
 The ``_isdigit`` function is a variant of the isdigit function in C. It is used to determine if a given character, specified as an unsigned char, representsa decimal digit (0-9). The function returns a non-zero value if the character is a digit, and 0 otherwise. It is often used when character classification needs to be performed on unsigned characters, such as when working with ASCII or UTF-8 encoded strings. This function provides a convenient way to validate and manipulate character data in C programs that involve unsigned characters and digit recognition. 
 ## memcpy
 The ``memcpy`` is a function in C that allows you to copy a block of memory from one location to another. It takes in three parameters: the destination memory block, the source memory block, and the number of bytes to copy. It performs a byte-by-byte copy of the data from the source to the destination. It is a low-level function and does not perform any checks for overlapping memory regions, so it should be used with caution to ensure that the memory addresses and sizes provided are valid.
+
+## bzero:
+The ``bzero`` function is used to set a block of memory to zero. It takes two parameters: a pointer to the memory block and the size of the block. It is commonly used to initialize memory buffers or reset memory regions before using them. This function is useful for security purposes when you want to clear sensitive data stored in memory.
+
+## memcmp:
+The ``memcmp`` function compares two memory blocks byte by byte. It takes three parameters: pointers to the two memory blocks to compare and the number of bytes to compare. The function returns an integer value indicating the relationship between the two memory blocks: 0 if the blocks are equal, a negative value if the first block is less than the second, and a positive value if the first block is greater than the second. This function is commonly used for comparing data structures, such as strings or arrays.
+
+## memset:
+The ``memset`` function is used to fill a block of memory with a specific value. It takes three parameters: a pointer to the memory block, the value to set, and the size of the block. It is often used to initialize arrays or set specific values in a memory region. This function is useful for tasks like initializing buffers or preparing memory for certain operations.
+
+## strdup:
+The ``strdup`` function creates a duplicate of a string by allocating memory and copying the contents of the original string. It takes a single parameter: a pointer to the string to duplicate. The function dynamically allocates memory for the new string and copies the content of the original string into it. The returned pointer points to the newly allocated memory. It is the responsibility of the caller to free the memory when it is no longer needed. This function is commonly used when you need to create a new string with the same content as an existing string.
+
+## strrchr:
+The ``strrchr`` function is used to find the last occurrence of a character in a string. It takes two parameters: a pointer to the input string and the character to search for. The function searches the string from the end and returns a pointer to the last occurrence of the character or NULL if the character is not found. This function is useful when you want to determine the position of the last occurrence of a specific character within a string. It can be used, for example, to extract the file extension from a file path.

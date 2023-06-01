@@ -21,4 +21,10 @@ void *_memcpy(void *dst, const void *src, size_t range);
 void *_memccpy(void *dst, const void *src, int c, size_t n);
 void *_memmove(void *dest, const void *src, size_t n);
 void *_memchr(const void *s, int c, size_t n);
+/*todo*/
+char *_strrchr(const char *s, int c);
+char *_strdup(const char *s1);
+int _memcmp(const void *s1, const void *s2, size_t n);
+void *_memset(void *b, int c, size_t len);
+void _bzero(void *s, size_t n);
 #endif
