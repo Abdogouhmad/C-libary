@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 /*prototype functions*/
 size_t _strlen(const char *s);
 char* _strcat(char *dest, const char *src);
@@ -21,10 +22,12 @@ void *_memcpy(void *dst, const void *src, size_t range);
 void *_memccpy(void *dst, const void *src, int c, size_t n);
 void *_memmove(void *dest, const void *src, size_t n);
 void *_memchr(const void *s, int c, size_t n);
-/*todo*/
 char *_strrchr(const char *s, int c);
 char *_strdup(const char *s1);
 int _memcmp(const void *s1, const void *s2, size_t n);
 void *_memset(void *b, int c, size_t len);
 void _bzero(void *s, size_t n);
+/*non stander lib*/
+int _putchar(char c);
+void _putstr(const char *str, size_t n);
 #endif

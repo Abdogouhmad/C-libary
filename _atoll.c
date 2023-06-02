@@ -26,13 +26,3 @@ long long _atoll(const char *str)
 return (output * sign);
 }
 
-
-int main() {
-    const char *str = "12345939392926738";
-    char *sd = "20";
-    long long number = _atoll(str);
-    long long nm = _atoll(sd);
-    printf("Number: %lld\n", number);
-    printf("hey -> %lld\n", nm);
-    return 0;
-}
