@@ -34,3 +34,11 @@ The ``strdup`` function creates a duplicate of a string by allocating memory and
 
 ## strrchr:
 The ``strrchr`` function is used to find the last occurrence of a character in a string. It takes two parameters: a pointer to the input string and the character to search for. The function searches the string from the end and returns a pointer to the last occurrence of the character or NULL if the character is not found. This function is useful when you want to determine the position of the last occurrence of a specific character within a string. It can be used, for example, to extract the file extension from a file path.
+## memchr
+The ``memchr`` function is a standard C library function that searches for a specific byte value within a block of memory. It takes a pointer to the memory block, the value to search for, and the number of bytes to search. It returns a pointer to the first occurrence of the byte value within the memory block, or a null pointer if the byte value is not found.
+## itoa
+The ``itoa`` function is a commonly used function in C programming for converting an integer to a string. It takes an integer value as input and converts it to a string representation. The resulting string contains the characters representing the digits of the integer. It may also include a sign character if the integer is negative. The itoa function typically returns a pointer to the resulting string.
+## putnbr
+The ``putnbr`` function is a custom function often used in programming exercises or small projects. It is responsible for printing an integer value to the standard output (console or terminal). It takes an integer as input and outputs the corresponding characters to represent the number. The ``putnbr`` function usually uses the ``putchar`` or ``printf`` functions internally to print individual characters.
+## putstr
+The ``putstr`` function is another custom function that is used to output a string to the standard output. It takes a null-terminated string as input and prints each character of the string until it reaches the null character ('\0'). The ``putstr`` function typically uses the ``putchar, printf`` or ``write`` functions internally to print the individual characters.

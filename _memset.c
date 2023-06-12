@@ -1,6 +1,6 @@
 #include "lib.h"
 /**
-* _memset - a function replance a byte n with specific value c 
+* _memset - a function replance a byte b with specific value c 
 * @b: the bytes needs to be replance
 * @c: the new value
 * @len: the range of replacing 

@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <ctype.h>
 /**
 * _atoll - convert the string of characters into digits
 * @str: the string of characters

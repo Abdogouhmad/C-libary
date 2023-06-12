@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <string.h>
 /**
  * _strlcat - Concatenates two strings while ensuring null-termination and preventing buffer overflows.
  * @dest: The destination string.

@@ -13,7 +13,7 @@ void *_memchr(const void *s, int c, size_t n)
   const unsigned char *string = (const unsigned char*)s;
   unsigned char chara = (unsigned char)c;
   size_t i;
-
+  if (s == NULL ) return (NULL);
   for (i = 0;i < n ; i++, string++)
   {
     /*make the comperation*/
@@ -22,3 +22,4 @@ void *_memchr(const void *s, int c, size_t n)
   }
   return (NULL);
 }
+
