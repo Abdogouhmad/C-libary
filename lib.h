@@ -1,5 +1,14 @@
 #ifndef lib_h
 #define lib_h
+/**
+ *
+ *
+ *
+ */
+typedef struct list_t{
+    int nm;
+    struct list_t* next;
+}my_list;
 
 /*headers*/
 #include <stdio.h>
