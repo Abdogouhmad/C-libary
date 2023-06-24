@@ -21,5 +21,7 @@ int main(void)
     print_listint(head);
     n = listint_len(head);
     printf("-> %lu elements\n", n);
+    free_listint2(&head);
+    printf("%p\n", (void *)head);
     return (0);
 }
