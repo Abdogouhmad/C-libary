@@ -7,9 +7,10 @@ int main(void)
 {
     listint_t *head;
     size_t n;
+    int d;
     head = NULL;
     add_nodeint(&head, 19);
-    add_nodeint_end(&head, -1);
+    add_nodeint_end(&head, 90);
     add_nodeint_end(&head, 0);
     add_nodeint_end(&head, 1);
     add_nodeint_end(&head, 2);
@@ -21,7 +22,18 @@ int main(void)
     print_listint(head);
     n = listint_len(head);
     printf("-> %lu elements\n", n);
+    d = pop_listint(&head);
+    printf(" deleted element-> {%d}\n", d);
+    print_listint(head);
+    n = listint_len(head);
+    printf("-> %lu elements\n", n);
+    d = pop_listint(&head);
+    printf(" deleted element-> {%d}\n", d);
+    print_listint(head);
+    n = listint_len(head);
+    printf("-> %lu elements\n", n);
     free_listint2(&head);
     printf("%p\n", (void *)head);
+
     return (0);
 }
