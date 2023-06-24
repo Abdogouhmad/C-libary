@@ -5,10 +5,10 @@
  *
  *
  */
-typedef struct list_t{
-    int nm;
-    struct list_t* next;
-}my_list;
+typedef struct listint_s{
+    int n;
+    struct listint_s *next;
+} listint_t;
 
 /*headers*/
 #include <stdio.h>
@@ -43,4 +43,10 @@ char *_putstr(const char *str, ssize_t n);
 void _putnbr(int num);
 char *_itoa(int number);
 char *_strtrim(char *str);
+/*linked list*/
+listint_t *insertion(listint_t **head, int n);
+size_t print_listint(const listint_t *h);
+size_t listint_len(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+listint_t *add_nodeint_end(listint_t **head, const int n);
 #endif

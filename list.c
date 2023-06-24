@@ -1,32 +1,23 @@
 #include "lib.h"
 /**
-*
-*
-*
-*/
-void printlist (my_list *head)
-{
-    my_list* tmp = head;
-    for (;tmp != NULL; tmp = tmp->next)
-  {
-    printf("%d->", tmp->nm);
-    //tmp = tmp->next;
-  }
-  printf("\n");
-}
+ *
+ *
+ */
 int main(void)
 {
- my_list n1, n2, n3;
-  my_list* head;
+    listint_t *head;
 
-  n1.nm = 12;
-  n2.nm;
-  n3.nm = 14;
-  // link the list
-  head = &n3;
-  n3.next = &n2;
-  n2.next = &n1;
-  n1.next = NULL;
-  printlist(head);
-  return 0;
+    head = NULL;
+    add_nodeint(&head, 19);
+    add_nodeint_end(&head, -1);
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    return (0);
 }
