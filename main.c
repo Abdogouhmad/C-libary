@@ -6,11 +6,9 @@
 int main(void)
 {
     listint_t *head;
-    size_t n;
-    int d;
+    listint_t *node;
+
     head = NULL;
-    add_nodeint(&head, 19);
-    add_nodeint_end(&head, 90);
     add_nodeint_end(&head, 0);
     add_nodeint_end(&head, 1);
     add_nodeint_end(&head, 2);
@@ -20,20 +18,9 @@ int main(void)
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
-    n = listint_len(head);
-    printf("-> %lu elements\n", n);
-    d = pop_listint(&head);
-    printf(" deleted element-> {%d}\n", d);
+    node = get_nodeint_at_index(head, 5);
+    printf("%d\n", node->n);
     print_listint(head);
-    n = listint_len(head);
-    printf("-> %lu elements\n", n);
-    d = pop_listint(&head);
-    printf(" deleted element-> {%d}\n", d);
-    print_listint(head);
-    n = listint_len(head);
-    printf("-> %lu elements\n", n);
     free_listint2(&head);
-    printf("%p\n", (void *)head);
-
     return (0);
 }
