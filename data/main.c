@@ -1,36 +1,54 @@
 #include "hash_tables.h"
-#include <stdlib.h>
-#include <stdio.h>
+
+
 
 int main(void)
 {
-    int *key = NULL;
+    int key;
     char *value = NULL;
     FILE *data;
+    ssize_t input_len;
+    size_t buffer_size, value_len;
 
-    data = fopen("data.txt", "w");
+    data = fopen("data.txt", "a");
     if (data == NULL)
     {
         fprintf(stderr, "Failed to open file\n");
         exit(2);
     }
 
-    key = malloc(sizeof(int));
-    value = malloc(sizeof(char) * 1024);
+    srand(time(NULL));
+    key = rand();
 
-    printf("Enter key as number: ");
-    scanf("%d", key);
-    printf("Enter the value as string: ");
-    getchar();
-    fgets(value, 1024, stdin);
-  
+    printf("Enter the value as a string: ");
 
-    fprintf(data, "- %d: \t\t %s \n", *key, value);
+    buffer_size = 1024;
+    value = malloc(sizeof(char) * buffer_size);
+    if (value == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(2);
+    }
 
-    fclose(data);  
-    free(key);
+    input_len = getline(&value, &buffer_size, stdin);
+    if (input_len == -1)
+    {
+        fprintf(stderr, "Failed to read input\n");
+        exit(2);
+    }
+
+    /* Remove newline character if present */
+    value_len = strlen(value);
+    if (value_len > 0 && value[value_len - 1] == '\n')
+        value[value_len - 1] = '\0';
+
+    fprintf(data, "- %d: \t\t %s \n", key, value);
+
+    fclose(data);
     free(value);
 
     return 0;
 }
+
+
 
