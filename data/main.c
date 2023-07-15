@@ -1,8 +1,6 @@
 #include "hash_tables.h"
 #include <stdio.h>
 
-
-
 int main(void)
 {
     int key;
@@ -40,6 +38,7 @@ int main(void)
             value[value_len - 1] = '\0';
             
         fprintf(data, "ID: %d:\t\t%s\n", key, value);
+        free(value);   /*free the memory allocated by getline() */
     }
 
     fclose(data);
@@ -47,4 +46,3 @@ int main(void)
 
     return 0;
 }
-
