@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <stdio.h>
 
 
 
@@ -20,13 +21,17 @@ int main(void)
     srand(time(NULL));
     key = rand();
     
-    do
+    while (1)
     {
-        printf("Enter the value as a string (enter 'exit' to exit): ");
+        printf("Enter the value as a string (use ctrl + d for linux to exit): ");
         buffer_size = 0;  /*Reset buffer size before getline*/
         input_len = getline(&value, &buffer_size, stdin);
         if (input_len == -1)
         {
+            if (feof(stdin))
+            {
+              break;
+            }
             fprintf(stderr, "Failed to read input\n");
             exit(2);
         }
@@ -35,7 +40,7 @@ int main(void)
             value[value_len - 1] = '\0';
             
         fprintf(data, "ID: %d:\t\t%s\n", key, value);
-    } while (strcmp(value, "exit") != 0);
+    }
 
     fclose(data);
     free(value);
