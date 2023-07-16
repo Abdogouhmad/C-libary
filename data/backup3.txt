@@ -34,14 +34,10 @@ int main(void)
         exit(3);
     }
 
-    /* randomly generate a key */
-    srand(time(NULL));
-
     /* while loop to get input from user */
     while (1)
     {
-        key = rand();
-        printf("Enter the value as a string (use ctrl + d for linux to exit): ");
+        printf("Enter the key as an integer (use ctrl + d for linux to exit): ");
         buffer_size = 0; /* Reset buffer size before getline */
         input_len = getline(&value, &buffer_size, stdin);
         if (input_len == -1)
@@ -51,6 +47,18 @@ int main(void)
             {
                 break;
             }
+            fprintf(stderr, "Failed to read input\n");
+            exit(2);
+        }
+
+        /* convert user input to integer */
+        key = atoi(value);
+
+        printf("Enter the value as a string: ");
+        buffer_size = 0; /* Reset buffer size before getline */
+        input_len = getline(&value, &buffer_size, stdin);
+        if (input_len == -1)
+        {
             fprintf(stderr, "Failed to read input\n");
             exit(2);
         }
@@ -67,6 +75,24 @@ int main(void)
             exit(4);
         }
 
+        /* prompt the user for the key to search for */
+        printf("Enter the key to search for: ");
+        buffer_size = 0; /* Reset buffer size before getline */
+        input_len = getline(&value, &buffer_size, stdin);
+        if (input_len == -1)
+        {
+            fprintf(stderr, "Failed to read input\n");
+            exit(2);
+        }
+
+        /* remove newline character from user input */
+        value_len = strlen(value);
+        if (value_len > 0 && value[value_len - 1] == '\n')
+            value[value_len - 1] = '\0';
+
+        /* convert user input to integer */
+        key = atoi(value);
+
         /* get the value for the current key and print it to found.txt */
         value = hash_table_get(ht, key);
         if (value != NULL)
@@ -81,6 +107,7 @@ int main(void)
         /* free the memory allocated by getline() */
         /*free(value);*/
     }
+
     /* close files */
     fclose(data);
     fclose(found);

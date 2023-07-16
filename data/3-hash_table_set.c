@@ -6,40 +6,37 @@
  * @value: the value of the key
  * Return: 0 on success, -1 on failure
  */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+int hash_table_set(hash_table_t *ht, int key, const char *value)
 {
+	hash_node_t *new_node = NULL, *temp = NULL;
 	unsigned long int index;
-	hash_node_t *new_node = (hash_node_t *)malloc(sizeof(hash_node_t));
-	hash_node_t *current;
 
-	/*CHECK IF THE VALUES ARE EMPTY RETURN 0 AS FAILIER*/
-	if (ht == NULL || key == NULL || strcmp(key, "") == 0 || value == NULL)
-		return (0);
-	if (*key == '\0' || new_node == NULL)
+	if (ht == NULL || value == NULL)
 		return (0);
 
-	/*get the hashed key */
-	index = key_index((const unsigned char *)key, ht->size);
-	current = ht->array[index];
-	while (current != NULL)
+	/*find the index of the key in the array*/
+	index = key % ht->size;
+
+	/*check if the key already exists in the list at this index*/
+	temp = ht->array[index];
+	while (temp != NULL)
 	{
-		if (current->key == (int *)key)
+		if (temp->key == key)
 		{
-			free(current->value);
-			current->value = strdup(value);
-	    free(new_node);
+			free(temp->value);
+			temp->value = strdup(value);
 			return (1);
 		}
-		current = current->next;
+		temp = temp->next;
 	}
-	/*duplicate the key and value*/
-	new_node->key = (int *)key;
+
+	/*create a new node for the key/value pair*/
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+	new_node->key = key;
 	new_node->value = strdup(value);
-
-
-	/*IF THE COLLISION OCCURED THEN UPDATE THE INDEX WITH NEW NODE*/
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-
 	return (1);
 }

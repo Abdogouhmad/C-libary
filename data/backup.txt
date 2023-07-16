@@ -68,7 +68,7 @@ int main(void)
         }
 
         /* get the value for the current key and print it to found.txt */
-        value = hash_table_get(ht, key);
+        value = hash_table_get(ht, 114970314);
         if (value != NULL)
         {
             fprintf(found, "The value for key %d is: %s\n", key, value);
