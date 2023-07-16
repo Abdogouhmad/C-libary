@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, int key, const char *value)
 	unsigned long int index;
 
 	if (ht == NULL || value == NULL)
-		return (0);
+		return (2);
 
 	/*find the index of the key in the array*/
 	index = key % ht->size;
@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, int key, const char *value)
 		{
 			free(temp->value);
 			temp->value = strdup(value);
-			return (1);
+			return (0);
 		}
 		temp = temp->next;
 	}
@@ -33,10 +33,13 @@ int hash_table_set(hash_table_t *ht, int key, const char *value)
 	/*create a new node for the key/value pair*/
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
-		return (0);
+	{
+		fprintf(stderr, "Error: failed to allocate\n");
+	return (2);
+	}
 	new_node->key = key;
 	new_node->value = strdup(value);
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-	return (1);
+	return (0);
 }
