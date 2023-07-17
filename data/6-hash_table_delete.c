@@ -20,13 +20,12 @@ void hash_table_delete(hash_table_t *ht)
         while (current)
         {
             temp = current;
-            /*free(temp->key);*/
-            free(temp->value);
-            free(temp);
+            free(temp->value); /*Free the dynamically allocated value*/
             current = current->next;
+            free(temp); /*Free the hash node itself*/
         }
         i++;
     }
-    free(ht->array);
-    free(ht);
+    free(ht->array); /*Free the array of pointers to hash nodes*/
+    free(ht); /*Free the hash table itself*/
 }
