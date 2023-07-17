@@ -80,7 +80,6 @@ int main(void)
 
     /* free the memory allocated by getline() */
     free(value);
-    /*hash_table_delete(ht);*/
   }
   /* close files */
   fclose(data);
