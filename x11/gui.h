@@ -21,5 +21,10 @@
 #define HEIGHT  500
 #define BORDER  20
 /*prototype*/
+
 void closewindow(Display* dis, Window win);
+Window createwindow(Display* dis, Window win, int x, int y, int width, int height, int border, int depth, unsigned long color);
+void run(XEvent env, Display* dis);
+
 #endif /*EOF*/
+
