@@ -8,6 +8,11 @@
 #include <err.h>
 #include <string.h>
 #include <ctype.h>
+#include <X11/keysym.h>
+#include <X11/Xutil.h>
+#include <X11/Xos.h>
+#include <X11/Xatom.h>
+
 
 /*DEFINES*/
 #define POSY    1000
