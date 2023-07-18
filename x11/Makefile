@@ -6,7 +6,7 @@ MAGENTA = \033[35m
 
 # program and files
 PROG = XDisplay
-SRC = ${PROG}.c
+SRC = $(wildcard *.c)
 OBJ = ${SRC:.c=.o}
 
 # path and flags

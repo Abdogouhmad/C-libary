@@ -20,12 +20,6 @@
 #define WIDTH   1000
 #define HEIGHT  500
 #define BORDER  20
-/*STATICS*/
-
-static Display* dis;
-static int scr;
-static Window root;
-
 /*prototype*/
-
+void closewindow(Display* dis, Window win);
 #endif /*EOF*/

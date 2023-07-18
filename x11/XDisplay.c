@@ -10,6 +10,9 @@ int main(void)
     
     Window win;
     XEvent env;
+    Window root;
+    int scr;
+    Display* dis;
 
     dis = XOpenDisplay(NULL);
     if (!dis)
@@ -37,11 +40,7 @@ int main(void)
         }
     }
 
-    XUnmapWindow(dis, win);
-
-    XDestroyWindow(dis, win);
-
-    XCloseDisplay(dis);
+    closewindow(dis, win);
     
     return 0;
 }
