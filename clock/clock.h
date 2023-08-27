@@ -16,8 +16,11 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#include <X11/keysym.h>
+#include <X11/Xutil.h>
 /*prototypes*/
 Window createClockWindow(Display* dis, Window win, int x, int y, int width, int height, int border, int depth, unsigned long color);
 void closeClockWindow(Display* dis, Window win);
 void Clock_create(Display* dis, Window win);
+void run(Display* dis, Window win, XEvent event);
 #endif

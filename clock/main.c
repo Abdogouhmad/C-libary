@@ -16,33 +16,10 @@ int main()
 
     scr = DefaultScreen(dis);
     root = RootWindow(dis, scr);
-    win = createClockWindow(dis, root, POSX, POSY, WIDTH, HEIGHT, BORDER, CopyFromParent, 0x607272);
+    win = createClockWindow(dis, root, POSX, POSY, WIDTH, HEIGHT, BORDER, CopyFromParent, 0x4c566a);
     XMapWindow(dis, win);
     /*manage the window*/
-    while (1)
-    {
-        XNextEvent(dis, &env);
-        switch (env.type)
-        {
-        case Expose:
-            Clock_create(dis, win);
-            XFlush(dis);
-        case KeyPress:
-            break;
-        case ButtonPress:
-            err(EXIT_SUCCESS, "close the window\n");
-        case MotionNotify:
-            break;
-        case ConfigureNotify:
-            break;
-        case ClientMessage:
-            break;
-        case DestroyNotify:
-            break;
-        default:
-            break;
-        }
-    }
+    run(dis, win, env);
     closeClockWindow(dis, win);
     return 0;
 }
